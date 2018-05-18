@@ -1,0 +1,14 @@
+.tickets {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.tickets table, .tickets th, .tickets td {
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.tickets th {
+    background-color: #fffafa;
+}

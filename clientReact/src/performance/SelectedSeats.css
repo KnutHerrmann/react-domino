@@ -1,0 +1,24 @@
+.selected-seats {
+    display: inline-block;
+    color: black;
+    font-size: 14px;
+}
+
+.selected-seats-total {
+    display: table;
+    font-weight: bold;
+    text-align: left;
+}
+
+.selected-seats-total-label {
+    display: table-cell;
+    padding-left: 8px;
+    width: 150px;
+}
+
+.selected-seats-total-price {
+    display: table-cell;
+    padding-right: 10px;
+    text-align: right;
+    width: 170px;
+}

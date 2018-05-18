@@ -1,0 +1,41 @@
+.seat {
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 15px;
+    border: 3px solid lightgray;
+    font-size: 50px;
+    line-height: 80px;
+    box-sizing: content-box;
+}
+
+.seat-category-1 {
+    background: lightblue;
+    color: lightblue;
+}
+
+.seat-category-2 {
+    background: lightyellow;
+    color: lightyellow;
+}
+
+.seat-category-3 {
+    background: lightpink;
+    color: lightpink;
+}
+
+.seat-category-0 {
+    background: #f1f1f1;
+    color: #f1f1f1;
+}
+
+.seat-clickable:hover {
+    border-color: dimgray;
+    color: dimgray;
+    cursor: pointer;
+}
+
+.seat-selected, .seat-selected:hover {
+    background: #337ab7;
+    color: white;
+}

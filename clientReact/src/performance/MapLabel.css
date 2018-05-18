@@ -1,0 +1,10 @@
+.map-label {
+    width: 1000px;
+    font-size: 80px;
+}
+
+.map-label-row {
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+}

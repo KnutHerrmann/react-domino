@@ -1,0 +1,40 @@
+.selected-seat {
+    display: table;
+    height: 100%;
+    border-radius: 5px;
+    border: 3px solid #337ab7;
+    margin: 10px 0;
+    padding: 3px;
+}
+
+.selected-seat-section {
+    display: table-cell;
+    padding: 0 3px;
+    text-align: left;
+    width: 130px;
+}
+
+.selected-seat-number {
+    display: table-cell;
+    padding: 0 3px;
+    text-align: left;
+    width: 120px;
+}
+
+.selected-seat-price {
+    display: table-cell;
+    padding-right: 10px;
+    text-align: right;
+    width: 65px;
+}
+
+.selected-seat-category {
+    display: table-cell;
+    text-align: center;
+    color: gray;
+    width: 20px;
+}
+
+.selected-seat-category:hover {
+    cursor: pointer;
+}

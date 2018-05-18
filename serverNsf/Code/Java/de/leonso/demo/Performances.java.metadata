@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.9" replicaid="C12582910028D04F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="18e" sequence="92" unid="AAB35A87323E59F8C12580E3001FDB68">
+<created><datetime>20170314T064757,84+01</datetime></created>
+<modified><datetime dst="true">20180518T092548,31+02</datetime></modified>
+<revised><datetime dst="true">20180516T220229,57+02</datetime></revised>
+<lastaccessed><datetime dst="true">20180518T092548,31+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180518T092548,31+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Knut Herrmann/O=Leonso</name></updatedby>
+<wassignedby><name>CN=Knut Herrmann/O=Leonso</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>de/leonso/demo/Performances.java</text></item>
+
+
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>de/leonso/demo/Performances.java</text></item>
+
+</note>

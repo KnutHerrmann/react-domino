@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	rendered="false">
+	<xe:restService
+		id="restService1"
+		pathInfo="data"
+		state="false">
+		<xe:this.service>
+			<xe:customRestService
+				contentType="application/json"
+				requestContentType="application/json"
+				serviceBean="de.leonso.demo.RestService">
+			</xe:customRestService>
+		</xe:this.service>
+	</xe:restService>
+</xp:view>

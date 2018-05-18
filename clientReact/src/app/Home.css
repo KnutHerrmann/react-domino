@@ -1,0 +1,17 @@
+.home {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.home-performance {
+    padding: 20px;
+    margin: 30px 0;
+    border: 2px solid #9b0000;
+    border-top: 0;
+    border-right: 0;
+    background-color: #fffafa;
+}
+
+.home-performance a {
+    color: inherit;
+}

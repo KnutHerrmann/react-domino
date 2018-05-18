@@ -1,0 +1,15 @@
+.app {
+    text-align: center;
+}
+
+a, a:hover {
+    color: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #333;
+}
