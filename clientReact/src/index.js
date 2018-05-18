@@ -8,6 +8,16 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import reducer from './redux/reducer';
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+    .then(registration => {
+        console.log(`Service Worker registered! Scope: ${registration.scope}`);
+    })
+    .catch(err => {
+        console.log(`Service Worker registration failed: ${err}`);
+    });
+}
+
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, logger())));
 
