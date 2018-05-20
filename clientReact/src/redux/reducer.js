@@ -1,20 +1,28 @@
-import {INIT_CONFIG, UPDATE_SHOWS, UPDATE_PERFORMANCES, UPDATE_STAGES, SEAT_CLICK, BUY_TICKETS} from './actions';
+import {
+    INIT_CONFIG,
+    UPDATE_SHOWS,
+    UPDATE_PERFORMANCES,
+    UPDATE_STAGES,
+    SEAT_CLICK,
+    BUY_TICKETS,
+    SHOW_API_ERROR
+} from './actions';
 
 const initialState = {
     config: {},
     theater: {
         performances: {},
         performancesSorted: [],
-            shows: {},
+        shows: {},
         showsSorted: [],
-            stages: {},
+        stages: {},
         stagesSorted: []
     },
     selectedSeats: {}
 };
 
 export function reducer(state = initialState, action) {
-     switch (action.type) {
+    switch (action.type) {
         case INIT_CONFIG: {
             const {config} = action;
             return ({...state, config: {...state.config, ...config}});
@@ -67,6 +75,11 @@ export function reducer(state = initialState, action) {
             const selectedSeats = {...state.selectedSeats};
             selectedSeats[perfomanceId] = [];
             return ({...state, theater: {...state.theater, performances}, selectedSeats});
+        }
+
+        case SHOW_API_ERROR: {
+            const {error} = action;
+            return ({...state, errors:[...state.errors || [], error]});
         }
 
         default:

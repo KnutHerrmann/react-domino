@@ -7,8 +7,11 @@ export const UPDATE_PERFORMANCES = 'UPDATE_PERFORMANCES';
 export const UPDATE_STAGES = 'UPDATE_STAGES';
 export const SEAT_CLICK = 'SEAT_CLICK';
 export const BUY_TICKETS = 'BUY_TICKETS';
+export const SHOW_API_ERROR = 'SHOW_API_ERROR';
 
 export const initConfig = (config) => ({type: INIT_CONFIG, config});
+
+export const showApiError = (error) => ({type: SHOW_API_ERROR, error});
 
 export const seatClick = (performanceId, seatId) =>
     ({type: SEAT_CLICK, performanceId, seatId});
@@ -51,6 +54,7 @@ const fetchData = (dataType, dataId, responseAction, payload) => {
         })
         .catch(function (error) {
             console.error(error);
+            dispatch(showApiError(error.message + ": " + dataType + (dataId ? '/' + dataId : '')));
         });
     };
 };
@@ -62,4 +66,3 @@ export const readPerformances = () => fetchData('performances', '', UPDATE_PERFO
 export const readStages = () => fetchData('stages', '', UPDATE_STAGES);
 
 export const buyTickets = (performanceId, selectedSeats) => fetchData('performances', performanceId, BUY_TICKETS, selectedSeats);
-

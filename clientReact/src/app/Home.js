@@ -7,12 +7,13 @@ import Strings from '../locale/Strings';
 
 class Home extends PureComponent {
     render() {
-        const {performances, performancesSorted, shows, stages} = this.props.theater;
+        const {theater, isError} = this.props;
+        const {performances, performancesSorted, shows, stages} = theater;
         return (
             <div className="home">
                 <h2>{Strings.welcome}</h2>
                 {performancesSorted.length <= 0
-                    ? <Spinner/>
+                    ? !isError && <Spinner/>
                     : performancesSorted.map((performanceId, index) => {
                         if (index >= 3) {
                             return null;
@@ -50,7 +51,8 @@ class Home extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-    theater: state.theater
+    theater: state.theater,
+    isError: state.errors && state.errors.length > 0
 });
 
 export default connect(

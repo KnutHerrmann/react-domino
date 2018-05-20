@@ -33,6 +33,7 @@ class App extends Component {
     }
 
     render() {
+        const {errors} = this.props.state;
         return (
             <Router>
                 <div className="app">
@@ -46,6 +47,11 @@ class App extends Component {
                         <Route path="/about" component={About}/>
                         <Route path="*" component={Home}/>
                     </Switch>
+                    {errors && (
+                        <div style={{color: 'red', margin:'1em'}}>
+                            {errors.map(error => <div>{error}</div>)}
+                        </div>)
+                    }
                 </div>
             </Router>
         );
