@@ -5,6 +5,7 @@ import {
     UPDATE_STAGES,
     SEAT_CLICK,
     BUY_TICKETS,
+    BUY_TICKETS_OPTIMISTIC,
     SHOW_API_ERROR
 } from './actions';
 
@@ -68,18 +69,28 @@ export function reducer(state = initialState, action) {
         }
 
         case BUY_TICKETS: {
-            const perfomanceId = action.dataId;
-            const availableSeats = {...action.json};
+            const {performanceId, availableSeats} = action;
             const performances = {...state.theater.performances};
-            performances[perfomanceId] = {...performances[perfomanceId], availableSeats};
+            performances[performanceId] = {...performances[performanceId], availableSeats};
             const selectedSeats = {...state.selectedSeats};
-            selectedSeats[perfomanceId] = [];
+            selectedSeats[performanceId] = [];
+            return ({...state, theater: {...state.theater, performances}, selectedSeats});
+        }
+
+        case BUY_TICKETS_OPTIMISTIC: {
+            const {performanceId, bookedSeats} = action;
+            const performances = {...state.theater.performances};
+            const availableSeats = {...performances[performanceId].availableSeats};
+            bookedSeats.map(seat => delete availableSeats[seat]);
+            performances[performanceId] = {...performances[performanceId], availableSeats};
+            const selectedSeats = {...state.selectedSeats};
+            selectedSeats[performanceId] = [];
             return ({...state, theater: {...state.theater, performances}, selectedSeats});
         }
 
         case SHOW_API_ERROR: {
             const {error} = action;
-            return ({...state, errors:[...state.errors || [], error]});
+            return ({...state, errors: [...state.errors || [], error]});
         }
 
         default:

@@ -18,6 +18,7 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+Notification.requestPermission();
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, logger())));
 
