@@ -21,13 +21,15 @@ workbox.routing.registerRoute(
 
 const showNotificationSuccess = () => {
     self.registration.showNotification('Background sync - executed request from queue', {
-        body: 'Ticket order accomplished successfully.'
+        body: 'Ticket order accomplished successfully.',
+        icon: './icons/icon-512x512.png'
     });
 };
 
 const showNotificationEnqueue = () => {
     self.registration.showNotification('Background sync - put request in queue', {
-        body: 'Ticket order will be sent as soon as device is online again.'
+        body: 'Ticket order will be sent as soon as device is online again.',
+        icon: './icons/icon-512x512.png'
     });
 };
 
