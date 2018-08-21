@@ -18,7 +18,9 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-Notification.requestPermission();
+if ('Notification' in window) {
+    Notification.requestPermission();
+}
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, logger())));
 
